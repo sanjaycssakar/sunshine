@@ -35,6 +35,7 @@ textView.setText(getIntent().getStringExtra("name"));
         if ( id == R.id.Share){
             Log.d(TAG, "onOptionsItemSelected: Accessed");
             onclickshare();
+            Log.d(TAG, "onOptionsItemSelected: ");
             return true;
         }
         return super.onOptionsItemSelected(item);
