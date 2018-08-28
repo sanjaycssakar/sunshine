@@ -16,6 +16,7 @@
 package com.example.android.sunshine;
 
 import android.content.Context;
+import android.support.v4.content.Loader;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,6 +43,8 @@ public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.Foreca
      */
     public interface ForecastAdapterOnClickHandler {
         void onClick(String weatherForDay);
+
+        void onLoadFinished(Loader<String[]> loader, String[] data);
     }
 
     /**
