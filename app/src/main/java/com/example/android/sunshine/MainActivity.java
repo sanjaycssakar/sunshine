@@ -131,7 +131,6 @@ public class MainActivity extends AppCompatActivity implements ForecastAdapterOn
         // TODO (2) Change the root layout of activity_detail.xml to a FrameLayout and remove unnecessary xml attributes
         // TODO (3) Remove the Toast and launch the DetailActivity using an explicit Intent
 
-        ;
         Intent intent = new Intent(MainActivity.this, DetailActivity.class);
         intent.putExtra("name",weatherForDay);
         startActivity(intent);
@@ -282,6 +281,7 @@ public class MainActivity extends AppCompatActivity implements ForecastAdapterOn
         /* Use the inflater's inflate method to inflate our menu layout to this menu */
         inflater.inflate(R.menu.forecast, menu);
 
+
         /* Return true so that the menu is displayed in the Toolbar */
         return true;
     }
@@ -314,7 +314,11 @@ public class MainActivity extends AppCompatActivity implements ForecastAdapterOn
             openLocationInMap();
             return true;
         }
-
+        if (id == R.id.settings) {
+            Intent startSettingsActivity = new Intent(this, SettingsActivity.class);
+            startActivity(startSettingsActivity);
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }

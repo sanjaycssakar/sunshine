@@ -27,6 +27,7 @@ textView.setText(getIntent().getStringExtra("name"));
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.share, menu);
         return true;
+
     }
 
     @Override
@@ -36,6 +37,11 @@ textView.setText(getIntent().getStringExtra("name"));
             Log.d(TAG, "onOptionsItemSelected: Accessed");
             onclickshare();
             Log.d(TAG, "onOptionsItemSelected: ");
+            return true;
+        }
+        if (id == R.id.settings) {
+            Intent startSettingsActivity = new Intent(this, SettingsActivity.class);
+            startActivity(startSettingsActivity);
             return true;
         }
         return super.onOptionsItemSelected(item);
